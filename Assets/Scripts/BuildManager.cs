@@ -9,7 +9,9 @@ public class BuildManager : MonoBehaviour
     public GameObject standardTurretPrefab;
     public GameObject missileLauncherPrefab;
 
-    private GameObject _turretToBuild = null;
+    private TurretBlueprint _turretToBuild = null;
+
+    public bool CanBuild { get { return _turretToBuild != null; } }
 
     void Awake()
     {
@@ -22,13 +24,25 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject GetTurretToBuild()
+    public void BuildTurretOn(Node node)
     {
-        return _turretToBuild;
+        if (PlayerStats.Money < _turretToBuild.cost)
+        {
+            Debug.Log("Not enough money to build that !");
+            return;
+        }
+
+        PlayerStats.Money -= _turretToBuild.cost;
+
+        GameObject turret = (GameObject)Instantiate(_turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        node.turret = turret;
+
+        Debug.Log("Turret Build : " + _turretToBuild.prefab.gameObject.name);
+        Debug.Log("Money Left : " + PlayerStats.Money);
     }
 
-    public void SetTurretToBuild(GameObject turret)
+    public void SelectTurretToBuild(TurretBlueprint turretBlueprint)
     {
-        _turretToBuild = turret;
+        _turretToBuild = turretBlueprint;
     }
 }

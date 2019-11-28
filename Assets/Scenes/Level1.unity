@@ -11309,6 +11309,7 @@ GameObject:
   - component: {fileID: 1384580030}
   - component: {fileID: 1384580029}
   - component: {fileID: 1384580031}
+  - component: {fileID: 1384580032}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -11363,6 +11364,18 @@ MonoBehaviour:
     type: 3}
   missileLauncherPrefab: {fileID: 1504692336349208879, guid: c02da6d398111ee4697e4ef0dd86eecf,
     type: 3}
+--- !u!114 &1384580032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1384580028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ce8c1c53f275d4580b754147a82ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1391326984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17064,6 +17077,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66191a65525fc84dadc03c50de27db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurret:
+    prefab: {fileID: 1443537605944547663, guid: 9e187eedc56fab54ba1eff6287b429d9,
+      type: 3}
+    cost: 100
+  missileLauncher:
+    prefab: {fileID: 1504692336349208879, guid: c02da6d398111ee4697e4ef0dd86eecf,
+      type: 3}
+    cost: 250
 --- !u!1001 &1950495211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18284,76 +18305,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45b74c7d8af766047888f37c5d55817f, type: 3}
---- !u!4 &2351043990532429160
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2562482706071104130}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -2.42, y: 1.8776315, z: 0.0006128115}
-  m_LocalScale: {x: 100, y: 99.99991, z: 99.99991}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2562482706071104130
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2351043990532429160}
-  - component: {fileID: 8538585039953408628}
-  - component: {fileID: 3283571258163777498}
-  m_Layer: 0
-  m_Name: Missile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!23 &3283571258163777498
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2562482706071104130}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 670224309865224971, guid: 1b76114738a5b87498c9b22b545637a8, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!1001 &4203283255694066085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18652,11 +18603,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52743266265610f4ab9f26d71d5ff858, type: 3}
---- !u!33 &8538585039953408628
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2562482706071104130}
-  m_Mesh: {fileID: -4436863061088633788, guid: 1b76114738a5b87498c9b22b545637a8, type: 3}
